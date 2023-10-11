@@ -2,23 +2,23 @@ using System.Text.Json.Serialization;
 
 namespace tadb_202320_ex03.Models
 {
-    public class Autobuses
+    public class Horarios_operacion
     {
-        [JsonPropertyName("id_autobus")]
+        [JsonPropertyName("id_hora")]
         public int Id { get; set; } = 0;
 
-        [JsonPropertyName("marca")]
-        public string marca { get; set; } = string.Empty;
+        [JsonPropertyName("pico")]
+        public bool pico { get; set; } = bool.Empty;
 
-         public override bool Equals(object? obj)
+           public override bool Equals(object? obj)
         {
             if (obj == null || GetType() != obj.GetType())
                 return false;
 
-            var otroBus = (Autobuses)obj;
+            var otroHorario_Operacion = (Horarios_operacion)obj;
 
-            return Id == otroBus.Id
-                   && marca.Equals(otroBus.marca);
+            return Id == otroHorario_Operacion.Id
+                   && pico.Equals(otroHorario_Operacion.pico);
         }
 
           public override int GetHashCode()
@@ -27,11 +27,9 @@ namespace tadb_202320_ex03.Models
             {
                 int hash = 3;
                 hash = hash * 5 + Id.GetHashCode();
-                hash = hash * 5 + (marca?.GetHashCode() ?? 0);
+                hash = hash * 5 + (pico?.GetHashCode() ?? 0);
                 return hash;
             }
         }
-
-
     }
 }

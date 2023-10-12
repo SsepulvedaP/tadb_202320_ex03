@@ -19,7 +19,7 @@ namespace tadb_202320_ex03.Models
             var otroCargador = (Cargadores)obj;
 
             return Id == otroCargador.Id
-                   && marca.Equals(otroCargador.Voltaje);
+                   && Voltaje.Equals(otroCargador.Voltaje);
         }
 
           public override int GetHashCode()

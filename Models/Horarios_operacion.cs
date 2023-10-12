@@ -8,7 +8,7 @@ namespace tadb_202320_ex03.Models
         public int Id { get; set; } = 0;
 
         [JsonPropertyName("pico")]
-        public bool pico { get; set; } = bool.Empty;
+        public bool pico { get; set; } = false;
 
            public override bool Equals(object? obj)
         {
